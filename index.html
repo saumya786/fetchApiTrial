@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Just A Title</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fetch API Trial</h1>
+      <button type="button" name="button" id="button1" onclick="anewFunction()" class="btn">Fetch Data</button><br>
+      <p id="result" class="flow-text"></p>
+    </div>
+    <script type="text/javascript">
+    function anewFunction() {
+      fetch("aNewText.txt")
+      .then(resp=>{
+          console.log('Okay');
+          return resp.text();
+      })
+      .then(data=>{
+        document.getElementById('result').innerHTML= data;
+      })
+      .catch(
+        err=>{
+          console.error(err);
+        }
+      )
+    }
+    </script>
+  </body>
+</html>
